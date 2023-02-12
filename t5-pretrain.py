@@ -533,7 +533,7 @@ if __name__ == '__main__':
         fp_16=False, # if you want to enable 16-bit training then install apex and set this to true
         opt_level='O1', # you can find out more on optimisation levels here https://nvidia.github.io/apex/amp.html#opt-levels-and-properties
         max_grad_norm=1.0, # if you enable 16-bit training then set this to a sensible value, 0.5 is a good default
-        seed=101,
+        seed=42,
     )
 
     args_dict.update({'output_dir': hparam.output_dir, 'num_train_epochs':int(hparam.num_train_epochs),
@@ -557,7 +557,7 @@ if __name__ == '__main__':
         callbacks=[LoggingCallback()]
     )
     
-    set_seed(42)
+    set_seed(hparam.seed)
     model = T5FineTuner(args)
     trainer = pl.Trainer(**train_params)
     trainer.fit(model)
