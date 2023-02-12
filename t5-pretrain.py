@@ -4,20 +4,20 @@ import glob
 import os
 import json
 import time
+import string
 import logging
 import random
 import re
 from itertools import chain
 from string import punctuation
 import math
-
 import pandas as pd
 import numpy as np
+
 import torch
 import pytorch_lightning as pl
 from torch.utils.data import Dataset, DataLoader
 from nlp import load_metric
-import string
 from pathlib import Path
 from transformers import (
     AdamW,
@@ -90,9 +90,9 @@ class T5FineTuner(pl.LightningModule):
     def __init__(self, hparams):
         super(T5FineTuner, self).__init__()
         self.hparams = hparams
-#         self.config = T5Config(hparams.model_name_or_path,dropout_rate=0.2)
+        #self.config = T5Config(hparams.model_name_or_path,dropout_rate=0.2)
         self.model = T5ForConditionalGeneration.from_pretrained(hparams.model_name_or_path)
-#         self.model.dropout_rate=0.2
+        #self.model.dropout_rate=0.2
         self.tokenizer = T5Tokenizer.from_pretrained(hparams.tokenizer_name_or_path)
         
         if self.hparams.freeze_embeds:
