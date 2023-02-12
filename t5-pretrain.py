@@ -497,7 +497,7 @@ def get_dataset(tokenizer, type_path, num_samples, args):
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('--input_length', default=128)
+    parser.add_argument('--input_length', default=512)
     parser.add_argument('--output_length', default=128)
     parser.add_argument('--num_train_epochs', default=1)
     parser.add_argument('--output_dir', default='t5_pretraining')
