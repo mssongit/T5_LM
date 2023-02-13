@@ -507,11 +507,11 @@ if __name__ == '__main__':
     hparam = parser.parse_args()
 
     args_dict = dict(
-        output_dir="", # path to save the checkpoints
         model_name_or_path=hparam.model,
         tokenizer_name_or_path=hparam.model,
         max_input_length=int(hparam.input_length),
         max_output_length=int(hparam.output_length),
+        output_dir="",
         freeze_encoder=False,
         freeze_embeds=False,
         learning_rate=1e-5,
@@ -540,7 +540,7 @@ if __name__ == '__main__':
                     'train_batch_size': int(hparam.train_batch_size), 'eval_batch_size': int(hparam.train_batch_size), 'learning_rate': float(hparam.learning_rate)})
     args = argparse.Namespace(**args_dict)
 
-    ## Define Checkpoint function
+    ## Checkpoint function
     checkpoint_callback = pl.callbacks.ModelCheckpoint(
         filepath=args.output_dir, prefix="checkpoint")
 
