@@ -530,7 +530,7 @@ if __name__ == '__main__':
         n_train=-1,
         n_test=-1,
         early_stop_callback=False,
-        fp_16=False, # if you want to enable 16-bit training then install apex and set this to true
+        fp_16=True, # if you want to enable 16-bit training then install apex and set this to true
         opt_level='O1', # you can find out more on optimisation levels here https://nvidia.github.io/apex/amp.html#opt-levels-and-properties
         max_grad_norm=1.0, # if you enable 16-bit training then set this to a sensible value, 0.5 is a good default
         seed=42,
