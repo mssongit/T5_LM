@@ -485,7 +485,6 @@ class Pretrain(Dataset):
         
         source_ids = source["input_ids"].squeeze()
         target_ids = targets["input_ids"].squeeze()
-
         src_mask    = source["attention_mask"].squeeze()
         target_mask = targets["attention_mask"].squeeze()
 
