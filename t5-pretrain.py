@@ -171,7 +171,7 @@ class T5FineTuner(pl.LightningModule):
         return self.lmap(str.strip, gen_text)
     
     
-    def _generative_step(self, batch) :
+    def _generative_step(self, batch):
         
         t0 = time.time()
         
