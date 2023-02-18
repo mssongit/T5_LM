@@ -239,7 +239,6 @@ class T5FineTuner(pl.LightningModule):
             average_subset_match_score = sum(latest_subset_score)/len(latest_subset_score)
             
         
-        
         average_em_score = torch.tensor(average_em_score,dtype=torch.float32)
         average_subset_match_score = torch.tensor(average_subset_match_score,dtype=torch.float32)
         tensorboard_logs.update(em_score=average_em_score, subset_match_score=average_subset_match_score)
