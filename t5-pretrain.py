@@ -512,7 +512,7 @@ if __name__ == '__main__':
         output_dir="",
         freeze_encoder=False,
         freeze_embeds=False,
-        learning_rate=1e-5,
+        learning_rate=2e-5,
         weight_decay=0.01,
         adam_epsilon=1e-8,
         warmup_steps=0,
