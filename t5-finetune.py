@@ -127,7 +127,7 @@ class DataTrainingArguments:
         },
     )
     max_target_length: Optional[int] = field(
-        default=128,
+        default=256,
         metadata={
             "help": "The maximum total sequence length for target text after tokenization. Sequences longer "
             "than this will be truncated, sequences shorter will be padded."
