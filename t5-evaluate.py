@@ -32,6 +32,7 @@ def rouge(targets,
     prediction = _prepare_summary(prediction)
     aggregator.add_scores(scorer.score(target=target, prediction=prediction))
   result = aggregator.aggregate()
+          
   for key in score_keys:
     logging.info(
         "%s = %.2f, 95%% confidence [%.2f, %.2f]",
