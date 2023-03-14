@@ -367,7 +367,6 @@ def main():
     padding = "max_length" if data_args.pad_to_max_length else False
 
     def preprocess_function(examples):
-
         inputs = examples[text_column]
         targets = examples[summary_column]
         inputs = [prefix + inp for inp in inputs]
