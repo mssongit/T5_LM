@@ -160,7 +160,6 @@ class T5FineTuner(pl.LightningModule):
         )
 
         loss = outputs[0]
-
         return loss
     
     
