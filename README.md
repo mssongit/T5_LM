@@ -11,5 +11,5 @@ python t5-pretrain.py --input_length 512 --output_length 128 --num_train_epochs 
 T5 Finetuning
 
 ~~~
-python t5-finetune.py --input_length
+python t5-finetune.py --input_length 512 --output_length 128 --num_train_epochs 3 --output_dir t5_finetuning --train_batch_size 8
 ~~~
